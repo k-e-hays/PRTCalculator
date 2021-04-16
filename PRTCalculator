@@ -1,0 +1,29 @@
+// Katherine Hays 
+// PRT Calc main method 
+// Version 1.0.0.0
+import javax.swing.JFrame;
+import java.awt.*;
+import javax.swing.SwingUtilities; //import statements
+public class PRTCalculator
+{
+    public static void main(String [] args)
+    {
+        SwingUtilities.invokeLater(new Runnable() //anon exec. to make thread
+        // != current thread
+        {
+                public void run() 
+                {
+                    JFrame frame = new MainFrame("USNSCC PRT Test"); //create
+                    // new object of MainFrame called USNSCC...
+                    
+                    frame.setSize(550,300); //set frame size
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    // ends program when exit out of system
+                    
+                    frame.setForeground(Color.WHITE); //set color
+                    frame.setVisible(true); //make visible
+                    
+                }
+        });
+    }
+}
