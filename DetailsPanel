@@ -1,0 +1,158 @@
+import javax.swing.*;
+import java.awt.*;
+import javax.swing.border.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DetailsPanel extends JPanel
+{
+    int age;
+    int runTime;
+    int pushCount;
+    int sitCount; //vars
+    JRadioButton maleButton = new JRadioButton("male");
+    JRadioButton femaleButton = new JRadioButton("female"); //objects
+    public DetailsPanel() 
+    {
+        //for details (buttons, text input, etc.)
+        Dimension size = getPreferredSize(); 
+        size.width = 530;
+        setPreferredSize(size);
+        final JLabel statusLabel = new JLabel("", JLabel.CENTER);
+        statusLabel.setSize(20,20);
+        setBorder(BorderFactory.createTitledBorder(null, "USNSCC PRT Calculator", TitledBorder.CENTER, TitledBorder.TOP, new Font("times new roman",Font.PLAIN,12), Color.yellow));
+        setBackground(Color.BLACK);
+        
+
+        
+        maleButton.setSelected(true);
+
+        ButtonGroup group = new ButtonGroup();
+        group.add(maleButton);
+        group.add(femaleButton);
+
+        JLabel ageLabel = new JLabel("Age: ");
+        JLabel sitLabel = new JLabel("Sit Ups: ");
+        JLabel pushLabel = new JLabel("Push Ups: ");
+        JLabel runLabel = new JLabel("Run Time (MMSS): ");
+        
+        ageLabel.setForeground(Color.WHITE);
+        sitLabel.setForeground(Color.WHITE);
+        pushLabel.setForeground(Color.WHITE);
+        runLabel.setForeground(Color.WHITE);
+
+        final JTextField ageField = new JTextField(4);
+        final JTextField runField = new JTextField(4);
+        final JTextField sitField = new JTextField(4);
+        final JTextField pushField = new JTextField(4);
+
+        JButton addButton = new JButton("Compute");
+        addButton.addActionListener(new ActionListener()
+            {
+                public void actionPerformed(ActionEvent e)
+                {
+                    SwitchPRT switchP = new SwitchPRT();
+                    try{ //attempt to get PRT Result
+                    age = Integer.parseInt(ageField.getText());
+                    sitCount = Integer.parseInt(sitField.getText());
+                    pushCount = Integer.parseInt(pushField.getText());
+                    runTime = Integer.parseInt(runField.getText());
+
+                    
+                    String text = "Your PRT Result is: "; 
+                    //statusLabel.setText(text + switchP.SwitchPRT());
+                    
+                    if (maleButton.isSelected())
+                    {
+                     statusLabel.setForeground(Color.WHITE);
+                     statusLabel.setText(text + switchP.maleSwitch(age, sitCount, pushCount, runTime));   
+                    }
+                    else
+                    {
+                     statusLabel.setForeground(Color.WHITE);   
+                     statusLabel.setText(text + switchP.femaleSwitch(age, sitCount, pushCount, runTime));   
+                    }
+                } catch(Exception r) //exception
+                {
+                    statusLabel.setForeground(Color.WHITE);   
+                    statusLabel.setText("Error. Please Try Again.");
+                }
+                }
+            });
+        //GridBagLayout functions
+        setLayout(new GridBagLayout());
+        GridBagConstraints gridcon = new GridBagConstraints();
+
+        ///// Male or Female /////////////
+        gridcon.anchor = GridBagConstraints.LINE_START;
+        gridcon.gridx = 0;
+        gridcon.gridy = 0;
+        add(maleButton, gridcon);
+        gridcon.gridx = 0;
+        gridcon.gridy = 1;
+        add(femaleButton, gridcon);
+
+        ///// First Column ///////////////
+        gridcon.anchor = GridBagConstraints.LINE_END;
+        gridcon.weightx = .5;
+        gridcon.weighty = .5;
+
+        gridcon.gridx = 1;
+        gridcon.gridy = 0;
+        add(ageLabel, gridcon);
+
+        gridcon.gridx = 1;
+        gridcon.gridy = 1;
+        add(sitLabel, gridcon);
+
+        gridcon.gridx = 1;
+        gridcon.gridy = 2;
+        add(pushLabel, gridcon);
+
+        gridcon.gridx = 1;
+        gridcon.gridy = 3;
+        add(runLabel, gridcon);
+
+        ///// Second Column //////////////
+        gridcon.anchor = GridBagConstraints.LINE_START;
+        gridcon.gridx = 2;
+        gridcon.gridy = 0;
+        add(ageField, gridcon);
+
+        gridcon.gridx = 2;
+        gridcon.gridy = 1;
+        add(sitField, gridcon);
+
+        gridcon.gridx = 2;
+        gridcon.gridy = 2;
+        add(pushField, gridcon);
+
+        gridcon.gridx = 2;
+        gridcon.gridy = 3;
+        add(runField, gridcon);
+
+        ///// Button Row
+        gridcon.weighty = 10;
+        gridcon.anchor = GridBagConstraints.FIRST_LINE_END;
+        gridcon.gridx = 1;
+        gridcon.gridy = 4;
+        add(addButton, gridcon);
+
+        ///// Results Row
+        gridcon.anchor = GridBagConstraints.CENTER;
+        gridcon.weighty = 20;
+        //gridcon.anchor = GridBagConstraints.FIRST_LINE_START;
+        gridcon.gridx = 2;
+        gridcon.gridy = 4;
+        add(statusLabel, gridcon);
+
+    }
+    JRadioButton getButton()
+        {
+          return maleButton;   
+        }
+    
+}
+ 
