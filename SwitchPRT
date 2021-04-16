@@ -1,0 +1,360 @@
+
+public class SwitchPRT
+{
+    DetailsPanel details = new DetailsPanel();
+    String prtScore;
+    public String SwitchPRT()
+    {
+        if (details.getButton().isSelected())
+        {
+            maleSwitch(details.age, details.sitCount, details.pushCount, details.runTime);
+        }
+        else
+        {
+            femaleSwitch(details.age, details.sitCount, details.pushCount, details.runTime);
+        }
+        return prtScore;
+    }
+    public String maleSwitch(int age, int curlups, int pushups, int run)
+    {
+        switch (age)
+        {
+            case 10:
+            if (curlups < 28 || pushups < 12 || run > 1140)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 35 || pushups < 14 || run > 948)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 45 || pushups < 22 ||run > 757)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 11:
+            if (curlups < 29 || pushups < 14 || run > 1145)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 37 || pushups < 15 || run > 920)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 47 || pushups < 27 ||run > 732)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 12:
+            if (curlups < 32 || pushups < 15 || run > 1022)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 40 || pushups < 18 || run > 840)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 50 || pushups < 31 ||run > 711)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 13:
+            if (curlups < 34 || pushups < 20 || run > 945)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 42 || pushups < 24 || run > 806)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 53 || pushups < 39 ||run > 650)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 14:
+            if (curlups < 36 || pushups < 20 || run > 930)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 45 || pushups < 24 || run > 744)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 56 || pushups < 40 ||run > 626)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 15:
+            if (curlups < 38 || pushups < 25 || run > 915)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 45 || pushups < 30 || run > 730)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 57 || pushups < 42 ||run > 620)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 16:
+            if (curlups < 40 || pushups < 25 || run > 900)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 45 || pushups < 30 || run > 710)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 56 || pushups < 44 ||run > 608)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 17:
+            if (curlups < 40 || pushups < 30 || run > 845)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 44 || pushups < 37 || run > 704)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 55 || pushups < 53 ||run > 606)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 18:
+            if (curlups < 40 || pushups < 30 || run > 845)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 44 || pushups < 37 || run > 704)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 55 || pushups < 53 ||run > 606)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+        }
+        return prtScore;
+    }
+    public String femaleSwitch(int age, int curlups, int pushups, int run)
+    {
+        switch (age)
+        {
+            case 10:
+            if (curlups < 26 || pushups < 9 || run > 1300)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 30 || pushups < 13 || run > 1122)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 40 || pushups < 20 || run > 919)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 11:
+            if (curlups < 28 || pushups < 7 || run > 1242)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 32 || pushups < 11 ||run > 1117)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 42 || pushups < 19 ||  run > 902)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 12:
+            if (curlups < 30 || pushups < 5 || run > 1224)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 35 || pushups < 10 || run > 1105)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 45 || pushups < 20 || run > 823)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 13:
+            if (curlups < 32 || pushups < 7 || run > 1215)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 37 || pushups < 11 || run > 1023)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 46 || pushups < 21 || run > 813)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 14:
+            if (curlups < 32 || pushups < 7 || run > 1200)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 37 || pushups < 10 || run > 1006)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 47 || pushups < 20 || run > 759)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 15:
+            if (curlups < 31 || pushups < 10 || run > 1145)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 36 || pushups < 15 || run > 958)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 48 || pushups < 20 || run > 808)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 16:
+            if (curlups < 30 || pushups < 10 || run > 1215)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 35 || pushups < 12 || run > 1031)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 45 || pushups < 24 || run > 823)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 17:
+            if (curlups < 29 || pushups < 10 || run > 1215)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 34 || pushups < 16 || run > 1022)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 44 || pushups < 25 || run > 815)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+            case 18:
+            if (curlups < 29 || pushups < 10 || run > 1215)
+            {
+                prtScore = "Fail";
+            }
+            else if(curlups < 34 || pushups < 16 || run > 1022)
+            {
+                prtScore = "Satisfactory";
+            }
+            else if(curlups < 44 || pushups < 25 || run > 815)
+            {
+                prtScore = "Good";
+            }
+            else
+            {  
+                prtScore = "Excellent";
+            }
+            break;
+        }
+        return prtScore;
+    }
+    // public String getScore()
+    // {
+        // return prtScore;
+    // }
+}
